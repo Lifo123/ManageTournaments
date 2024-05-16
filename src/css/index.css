@@ -1,0 +1,29 @@
+div{
+    font-size: 22px;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+span{
+    border-radius: 150px;
+    background-color: #0c6cbf;
+    color: #FFF;
+    width: max-content;
+    display: flex;
+    padding: 12px 42px;
+    user-select: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+button{
+    border: none;
+    outline: none;
+    border-radius: 150px;
+    margin: auto;
+    color: white;
+    margin-top: 20px;
+    background-color: #d71313;
+    padding: 12px 46px;
+}
