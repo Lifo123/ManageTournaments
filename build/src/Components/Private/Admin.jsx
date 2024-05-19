@@ -7,7 +7,7 @@ function Admin() {
 
   //Functions
   const HandleLogout = () => {
-    console.log('Sesión Cerrada');
+    console.log('Sesión Cerrada Cambios pe');
     localStorage.setItem('Auth', false);
     setAuth(false);
   }
