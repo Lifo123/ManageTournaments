@@ -95,7 +95,7 @@
 }
 .gra-c{
     border: solid 2px var(--br-normal);
-    border-radius: 0px 6px 6px 0px;
+    border-radius: 0px 6px 6px 0px; 
     border-left: none;
     background-color: #FFF;
     height: 94px;
