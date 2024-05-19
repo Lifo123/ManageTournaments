@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/Lifo123/RouteTest.git",
+  "homepage": "https://Lifo123.github.io/RouteTest",
   "name": "reactroutertesting",
   "private": true,
   "version": "0.0.0",
@@ -8,7 +8,10 @@
     "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+
+    "predeploy": "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "dependencies": {
     "git": "^0.1.5",
