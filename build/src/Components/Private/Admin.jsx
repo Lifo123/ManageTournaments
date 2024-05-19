@@ -15,7 +15,7 @@ function Admin() {
 
   return (
     <div>
-      <h2>Admin Dashboard</h2>
+      <h2>Admin Dashboard Ahora estamos con repositorio</h2>
       <div>
         <p>Usuario {Auth ? 'Validado' : 'Denegado'}</p>
         <button onClick={HandleLogout}>Change</button>
