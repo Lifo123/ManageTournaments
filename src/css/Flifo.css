@@ -6,7 +6,7 @@
     --header-color: #f3f3f3;
     --bg-color: #f8f8f8;
     --bg1-color: #8ec0fa;
-    --bg2: #BC111D;
+    --bg2: #EA0629;
     --bg3: #1D9BF0;
     --bg4: #83CE47;
     --bg5: #E9BE50;
@@ -88,28 +88,30 @@
 }
 
 /*Display*/
-.flex-col {
+.f-col {
     display: flex;
     flex-direction: column;
 }
 
-.flex-row {
+.f-row {
     display: flex;
     flex-direction: row;
 }
 
-.flex-center{
+.f-center {
     justify-content: center;
     align-items: center;
 }
-.d-flex{
+
+.d-flex {
     display: flex;
 }
 
-.f-align-center{
+.f-align-center {
     align-items: center;
 }
-.f-justify-center{
+
+.f-justify-center {
     justify-content: center;
 }
 
@@ -148,7 +150,7 @@
 
 
 /*margin*/
-.mt-5p {
+.mt-5 {
     margin-top: 5px !important;
 }
 
@@ -176,21 +178,53 @@
     margin-top: 50px !important;
 }
 
+.mt-60 {
+    margin-top: 50px !important;
+}
+
 .mt-70 {
     margin-top: 70px !important;
 }
 
-.my-35{
+.my-35 {
     margin-block: 35px;
 }
-.my-25{
+
+.my-25 {
     margin-block: 25px;
 }
-.my-15{
+
+.my-15 {
     margin-block: 15px;
 }
 
-.m-auto{
+.ml-10{
+    margin-left: 10px;
+}
+.ml-20{
+    margin-left: 20px;
+}
+.ml-30{
+    margin-left: 30px;
+}
+.ml-40{
+    margin-left: 40px;
+}
+
+.mr-10{
+    margin-right: 10px;
+}
+.mr-20{
+    margin-right: 20px;
+}
+.mr-30{
+    margin-right: 30px;
+}
+.mr-40{
+    margin-right: 40px;
+}
+
+.m-auto {
     margin: auto;
 }
 
@@ -294,9 +328,22 @@
     gap: 90px;
 }
 
+/*Height*/
+.h-100 {
+    height: 100%;
+}
+
 /*Width*/
 .w-120 {
     width: 120%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-95 {
+    width: 95%;
 }
 
 .w-90 {

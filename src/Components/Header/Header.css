@@ -1,0 +1,56 @@
+.header{
+    height: 70px;
+    border-bottom: solid 1px var(--br-low);
+    justify-content: space-between;
+}
+
+
+.logo-div h4{
+    font-size: 20px;
+    color: #5A5A5A;
+    font-family: Inter-Basic;
+    padding: 10px;
+}
+
+.b-getstar{
+    padding: 12px 38px;
+    font-size: 15px;
+    font-family: Rubik;
+}
+
+.h-list{
+    list-style: none;
+    gap: 10px;
+    font-size: 15px;
+    font-family: Inter-Basic;
+}
+
+.h-list li{
+    cursor: pointer;
+    padding: 14px 10px;
+}
+
+.h-list li:hover{
+    background-color: #5a5a5a10;
+    border-radius: 8px;
+    position: relative;
+    transform: scale(1.02);
+}
+
+.user-sign > span{
+    background-color: #727272;
+    height: 34px;
+    width: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    overflow: hidden;
+}
+
+.user-sign > p {
+    font-size: 15px;
+    font-weight: 500;
+    font-family: Inter-Basic;
+    color: #555555;
+}
