@@ -1,0 +1,45 @@
+.lan-main{
+    height: calc(100% - 70px);
+    margin-top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.lan-left{
+    margin-top: 130px;
+    width: 700px;
+}
+
+.lan-left h1{
+    color: #202629;
+    font-size: 70px;
+    font-family: Inter-Basic;
+    font-weight: 700;
+    display: inline;
+}
+
+.lan-left > h1 > span{
+    color: var(--primary);
+}
+.lan-left > p{
+    font-size: 18px;
+    line-height: 1.5rem;
+    color: var(--font-normal);
+}
+
+.lan-left > div > span{
+    padding: 14px 32px;
+    font-size: 16px;
+    font-family: Inter-Basic;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lan-right {
+    margin-top: 130px;
+    height: 360px;
+    width: 450px;
+}
+.lan-right img{
+    height: 80%;
+    margin-bottom: 50px;
+}

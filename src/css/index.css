@@ -21,7 +21,7 @@
     --bg: #EEEFF3;
     --font: #000;
     --font-i: #FFF;
-    --bg-sec: #E0E0E0;
+    --bg-sec: #EEEFF3;
     --primary: #EA0629;
     --accent: #F7B91D;
     --font-link: #077DBF;
@@ -46,5 +46,13 @@ body {
     background-color: var(--primary);
     border-radius: 6px;
     color: #FFF;
+    height: max-content;    
+}
+
+.btn-secondary{
+    border: solid 1px var(--sk-br);
+    background-color: var(--bg-sec);
+    border-radius: 6px;
+    color: #000;
     height: max-content;    
 }

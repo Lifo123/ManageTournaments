@@ -25,9 +25,11 @@
     font-family: Inter-Basic;
 }
 
-.h-list li{
+.h-list a{
     cursor: pointer;
     padding: 14px 10px;
+    text-decoration: none;
+    color: var(--font-high);
 }
 
 .h-list li:hover{
