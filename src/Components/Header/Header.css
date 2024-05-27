@@ -39,17 +39,6 @@
     transform: scale(1.02);
 }
 
-.user-sign > span{
-    background-color: #727272;
-    height: 34px;
-    width: 34px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    overflow: hidden;
-}
-
 .user-sign > p {
     font-size: 15px;
     font-weight: 500;

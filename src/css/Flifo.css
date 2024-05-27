@@ -31,7 +31,7 @@
     /*Font*/
     --font-h1: #000;
     --font-high: #171717;
-    --font-normal: #696F79;
+    --font-normal: #4D4D4D;
     --font-low: #8692A6;
     --font-white: #ffffff;
     --font-link: #2C73EB;
@@ -65,7 +65,6 @@
 
 .sticky {
     position: sticky;
-    top: 0;
 }
 
 .pointer {
@@ -115,6 +114,14 @@
     justify-content: center;
 }
 
+.f-justify-between {
+    justify-content: space-between;
+}
+
+.f-justify-around {
+    justify-content: space-around;
+}
+
 /**Box shadow**/
 .bx-sd-low {
     box-shadow: 1px 1px 2px #5757572e;
@@ -162,6 +169,10 @@
     margin-top: 25px !important;
 }
 
+.mt-30 {
+    margin-top: 30px !important;
+}
+
 .mt-35 {
     margin-top: 35px !important;
 }
@@ -198,29 +209,35 @@
     margin-block: 15px;
 }
 
-.ml-10{
+.ml-10 {
     margin-left: 10px;
 }
-.ml-20{
+
+.ml-20 {
     margin-left: 20px;
 }
-.ml-30{
+
+.ml-30 {
     margin-left: 30px;
 }
-.ml-40{
+
+.ml-40 {
     margin-left: 40px;
 }
 
-.mr-10{
+.mr-10 {
     margin-right: 10px;
 }
-.mr-20{
+
+.mr-20 {
     margin-right: 20px;
 }
-.mr-30{
+
+.mr-30 {
     margin-right: 30px;
 }
-.mr-40{
+
+.mr-40 {
     margin-right: 40px;
 }
 
@@ -327,6 +344,7 @@
 .g-90 {
     gap: 90px;
 }
+
 .g-95 {
     gap: 95px;
 }
@@ -334,6 +352,7 @@
 .g-100 {
     gap: 100px;
 }
+
 .g-110 {
     gap: 110px;
 }
@@ -513,6 +532,10 @@
     text-decoration: none !important;
 }
 
+.text-left {
+    text-align: start !important;
+}
+
 /*Background Colors*/
 .bg-1st {
     background-color: var(--bg-m1);
@@ -528,4 +551,36 @@
 
 .bg-4th {
     background-color: var(--bg-m4);
+}
+
+.pfp{
+    background-color: var(--sk-in);
+    border: solid 1px var(--sk-br);
+    height: 34px;
+    width: 34px;
+}
+/*No Profile Image*/
+.nopfp {
+    background-color: #727272;
+    border: solid 4px #727272;
+    height: 34px;
+    width: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    overflow: hidden;
+}
+.nopfp-head{
+    background-color: #FFF;
+    height: 40%;
+    width: 40%;
+    top: 20%;
+}
+.nopfp-quad{
+    background-color: #FFF;
+    border-radius: 10px 10px 0px 0px;
+    height: 40%;
+    width: 70%;
+    bottom: -3px;
 }

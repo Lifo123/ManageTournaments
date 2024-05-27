@@ -1,11 +1,9 @@
 .lan-main{
     height: calc(100% - 70px);
-    margin-top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: auto;
+    margin-top: 150px;
 }
 .lan-left{
-    margin-top: 130px;
     width: 700px;
 }
 
@@ -20,11 +18,6 @@
 .lan-left > h1 > span{
     color: var(--primary);
 }
-.lan-left > p{
-    font-size: 18px;
-    line-height: 1.5rem;
-    color: var(--font-normal);
-}
 
 .lan-left > div > span{
     padding: 14px 32px;
@@ -35,11 +28,42 @@
 }
 
 .lan-right {
-    margin-top: 130px;
     height: 360px;
     width: 450px;
 }
 .lan-right img{
-    height: 80%;
+    height: 84%;
     margin-bottom: 50px;
+}
+
+.lan-sec{
+    margin-top: 230px;
+}
+
+.lan-sec-title{
+    width: 670px;
+    text-align: center;
+}
+
+.l-c-card{
+    border-radius: 8px;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+}
+.l-c-card span{
+    background-color: var(--sk-in);
+    border: solid 1px var(--sk-br);
+    border: solid 1px var();
+    height: 70px;
+    width: 70px;
+}
+.l-c-card p{
+    text-align: center;
+    font-size: 16px ;
+}
+
+.lan-third{
+    margin-top: 140px;
+    gap: 160px;
 }

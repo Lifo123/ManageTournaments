@@ -7,7 +7,7 @@ import PageNotFound from "./Pages/PageNoFound/PageNotFound";
 
 
 function App() {
-  const [Auth, setAuth] = useState(localStorage.getItem('Auth') || false);
+  const [Auth, setAuth] = useState(localStorage.getItem('Auth') === 'true');
 
   return (
     <>
