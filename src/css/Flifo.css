@@ -190,11 +190,21 @@
 }
 
 .mt-60 {
-    margin-top: 50px !important;
+    margin-top: 60px !important;
 }
 
 .mt-70 {
     margin-top: 70px !important;
+}
+.mt-120 {
+    margin-top: 120px !important;
+}
+.mt-160 {
+    margin-top: 160px !important;
+}
+
+.mb-60 {
+    margin-bottom   : 60px !important;
 }
 
 .my-35 {
@@ -203,6 +213,14 @@
 
 .my-25 {
     margin-block: 25px;
+}
+
+.my-30 {
+    margin-block: 30px;
+}
+
+.my-40 {
+    margin-block: 40px;
 }
 
 .my-15 {
@@ -244,6 +262,13 @@
 .m-auto {
     margin: auto;
 }
+.mx-auto{
+    margin-inline: auto;
+}
+.my-auto{
+    margin-block: auto;
+}
+
 
 /*Padding*/
 .px-40 {
@@ -273,7 +298,7 @@
 }
 
 /*gap*/
-.g-5p {
+.g-5 {
     gap: 5px;
 }
 
@@ -531,7 +556,9 @@
 .no-line {
     text-decoration: none !important;
 }
-
+.text-center {
+    text-align: center !important;
+}
 .text-left {
     text-align: start !important;
 }
@@ -583,4 +610,49 @@
     height: 40%;
     width: 70%;
     bottom: -3px;
+}
+
+/*Input*/
+.input {
+    padding: 16px 19px;
+    outline: none;
+    background-color: var(--bg-color);
+    border: solid 1px var(--font-low);
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+    -webkit-transition-delay: 9999s;
+    transition-delay: 9999s;
+}
+
+.in-p {
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    padding: 0.2rem 0.4rem;
+    color: var(--font-normal);
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: top 0.1s, left 0.1s, transform 0.1s;
+}
+
+.lr-p-a {
+    top: 0% !important;
+    left: 8px !important;
+    font-size: 13px !important;
+    transform: translateY(-50%) !important;
+}
+
+.lr-in .ski{
+    height: 34px;
+    width: 34px;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
 }

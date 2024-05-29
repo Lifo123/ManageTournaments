@@ -64,6 +64,26 @@
 }
 
 .lan-third{
-    margin-top: 140px;
+    margin-top: 160px;
     gap: 160px;
+}
+
+.l-t-info{
+    width: 280px;
+}
+
+.l-t-info span{
+    border: solid 1px var(--accent);
+    background-color: var(--accent);
+    height: 44px;
+    width: 44px;
+    display: flex;
+}
+.l-t-info > div h4{
+    font-size: 25px;
+    font-family: Inter-Basic;
+    color: var(--primary);
+}
+.l-t-info > div > p {
+    font-size: 15px;
 }

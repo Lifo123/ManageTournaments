@@ -41,6 +41,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+.btn{
+    padding: 12px 32px;
+    width: max-content;
+    text-decoration: none;
+}
 
 .btn-primary{
     background-color: var(--primary);
@@ -75,4 +80,29 @@ body {
     font-size: 45px;
     font-weight: 600;
     color: #263238;
+}
+
+.f-fnt-1{
+    font-weight: 600;
+    font-size: 20px;
+    font-family: Inter-Basic;
+    color: #FFF;
+}
+
+.f-fnt-2{
+    font-weight: 300;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #dfdfdf;
+    list-style: none;
+}
+
+.ski{
+    border: solid 1px var(--sk-br);
+    border-radius: 50%;
+    background-color: var(--sk-in);
+    height: 40px;
+    width: 40px;
+    display: grid;
+    place-content: center;
 }
