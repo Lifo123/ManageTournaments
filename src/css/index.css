@@ -46,11 +46,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-.btn{
-    padding: 12px 32px;
-    width: max-content;
-    text-decoration: none;
-}
 
 .btn-primary{
     background-color: var(--primary);
@@ -100,14 +95,4 @@ body {
     font-family: sans-serif;
     color: #dfdfdf;
     list-style: none;
-}
-
-.ski{
-    border: solid 1px var(--sk-br);
-    border-radius: 50%;
-    background-color: var(--sk-in);
-    height: 40px;
-    width: 40px;
-    display: grid;
-    place-content: center;
 }
