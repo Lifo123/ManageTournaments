@@ -11,11 +11,7 @@ function Header() {
     const UserData = useContext(UserContext);
 
     const navigate = useNavigate();
-
-    useEffect(() => {
-        localStorage.setItem('Auth', Auth.Auth);
-    }, [Auth.Auth]);
-
+    
     return (
         <header className='header f-row w-100'>
             <div className='f-row logo-div f-align-center ml-40 g-10'>
@@ -29,7 +25,7 @@ function Header() {
                     <Link to={'/Community'}>Community</Link>
                     <Link to={'/Blog'}>Blog</Link>
                 </ul>
-                {Auth.Auth ? null : <span className='btn-primary pointer b-getstar'>Get Started</span>}
+                {Auth.Auth ? null : <Link className='btn btn-primary pointer b-getstar' to={'/Create'}>Get Started</Link>}
                 <label className='f-row user-sign g-15 f-align-center mr-40'>
                     <Link to={Auth.Auth ? `/Profile/${UserData.UserData}` : '/Login'}><Nopfp Auth={Auth} /></Link>
                     <Link className='pointer' to={Auth.Auth ? `/Profile/${UserData.UserData}` : '/Login'}>{Auth.Auth ? UserData.UserData || 'Username' : 'Sign in'}</Link>

@@ -18,10 +18,6 @@ function LogReg({ m }) {
 
     //Effects
     useEffect(() => {
-        Auth.setAuth(localStorage.getItem('Auth') === 'true')
-    }, [Auth.Auth])
-
-    useEffect(() => {
         if (Auth.Auth) {
             navigate('/')
         }
@@ -79,7 +75,6 @@ function LogReg({ m }) {
     const HandleAuthRedirect = (user) => {
         setErrMsg(null);
         Auth.setAuth(true);
-        localStorage.setItem('Auth', true);
         UserData.setUserData(user);
         navigate('/Home');
     }

@@ -19,7 +19,7 @@
     color: var(--primary);
 }
 
-.lan-left > div > span{
+.lan-left > div > a{
     padding: 14px 32px;
     font-size: 16px;
     font-family: Inter-Basic;

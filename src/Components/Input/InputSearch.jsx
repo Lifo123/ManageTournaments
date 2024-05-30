@@ -1,4 +1,4 @@
-function Input({ t, text, n, f, i, atr, enter }) {
+export default function InputSearch({ text, i, funct }) {
 
     //Functions
     const HandleFocus = (e) => {
@@ -11,17 +11,15 @@ function Input({ t, text, n, f, i, atr, enter }) {
         }
     }
 
-    const HandleEnter = (e) => {
-        e.key === 'Enter' ? enter() : null;
+    const HandleSearch = (e) => {
+      funct(e.target.value)
     }
 
     return (
         <span className='lr-in d-flex flex-column relative'>
-            {f ? <span className="ski absolute pointer" onClick={f}>{i || null}</span> : null}
-            <input className="input" type={t || 'text'} name={n || null} onFocus={HandleFocus} onBlur={HandleBlur} atr={atr} onKeyDown={enter ? HandleEnter : null}/>
+            {i ? <span className="ski absolute pointer">{i}</span> : null}
+            <input className="input" type='text' onFocus={HandleFocus} onBlur={HandleBlur} onChange={HandleSearch} />
             <p className='in-p absolute no-select'>{text || 'Attribute "text={`PlaceHolder`}"'}</p>
         </span>
     )
 }
-
-export default Input
