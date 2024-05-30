@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext, UserContext } from '../../App'
 
 import './Styles/LogReg.css'
 import Input from '../../Components/Input/Input';
-import { Link, useNavigate } from 'react-router-dom';
+import Loading from '../../Components/Loading/Loading';
 
 function LogReg({ m }) {
     const navigate = useNavigate();
@@ -21,14 +22,13 @@ function LogReg({ m }) {
     }, [Auth.Auth])
 
     useEffect(() => {
-        console.log(Auth.Auth)
-        if(Auth.Auth){
+        if (Auth.Auth) {
             navigate('/')
         }
     }, []);
 
     //Functions
-    const HandleToggle = () => {
+    const HandleToggleRoute = () => {
         if (LogReg === 'Reg') {
             setLogReg('Log');
             navigate('/Login');
@@ -45,8 +45,8 @@ function LogReg({ m }) {
         }
     }
 
-    const HandleExecLogin = (e) => {
-        let inputs = e.target.parentElement.querySelectorAll('input[atr]');
+    const HandleValidationLogin = () => {
+        let inputs = document.body.querySelectorAll('input[atr]');
         if (inputs[0].value === '') {
             setErrMsg('Ingresa un Usuario');
             return;
@@ -55,16 +55,11 @@ function LogReg({ m }) {
             setErrMsg('Ingresa tu contraseña');
             return;
         }
-
-        setErrMsg(null);
-        Auth.setAuth(true);
-        UserData.setUserData(inputs[0].value)
-        localStorage.setItem('Auth', true);
-        navigate('/')
+        HandleAuthRedirect(inputs[0].value);
     }
 
-    const HandleExecRegister = (e) => {
-        let inputs = e.target.parentElement.querySelectorAll('input[atr]');
+    const HandleValidationRegister = () => {
+        let inputs = document.body.querySelectorAll('input[atr]');
 
         if (inputs[0].value === '') {
             setErrMsg('Ingresa un Usuario');
@@ -74,15 +69,19 @@ function LogReg({ m }) {
             setErrMsg('Ingresa tu contraseña');
             return;
         }
-        if (inputs[2].value === '') {
+        if (inputs[2].value === '' || inputs[1].value !== inputs[2].value) {
             setErrMsg('Las contraseñas no coinciden');
             return;
         }
+        HandleAuthRedirect(inputs[0].value);
+    }
+
+    const HandleAuthRedirect = (user) => {
         setErrMsg(null);
         Auth.setAuth(true);
-        UserData.setUserData(inputs[0].value)
         localStorage.setItem('Auth', true);
-        navigate('/')
+        UserData.setUserData(user);
+        navigate('/Home');
     }
 
     return (
@@ -92,15 +91,15 @@ function LogReg({ m }) {
                 <form className='f-col relative g-25'>
                     <header className='f-col g-5'>
                         <h1 className='text-center'>{LogReg === 'Reg' ? 'Sign Up' : 'Sign In'}</h1>
-                        <p className='a-fnt-2 text-center'>Don’t have an account? <span className='fnt-link' onClick={HandleToggle}>{LogReg === 'Reg' ? 'Sign In' : 'Sign Up'}</span></p>
+                        <p className='a-fnt-2 text-center'>Don’t have an account? <span className='fnt-link' onClick={HandleToggleRoute}>{LogReg === 'Reg' ? 'Sign In' : 'Sign Up'}</span></p>
                     </header>
                     <div className='f-col g-25 mt-10 mlr-js'>
-                        <Input text={'Username'} n={'username'} atr={'user'} />
+                        <Input text={'Username'} n={'username'} atr={'user'} enter={LogReg === 'Log' ? HandleValidationLogin : HandleValidationRegister} />
                         <div className='f-col g-10'>
-                            <Input t={'password'} text={'Password'} f={HandleToggleShow} atr={'pass1'} />
+                            <Input t={'password'} text={'Password'} f={HandleToggleShow} atr={'pass1'} enter={LogReg === 'Log' ? HandleValidationLogin : HandleValidationRegister} />
                             {LogReg === 'Reg' ? null : <Link to={'/ResetPassword'} className='fnt-link f-align-self-end'>Forgot password?</Link>}
                         </div>
-                        {LogReg === 'Reg' ? <Input t={'password'} text={'Repeat Password'} f={HandleToggleShow} atr={'pass2'} /> : null}
+                        {LogReg === 'Reg' ? <Input t={'password'} text={'Repeat Password'} f={HandleToggleShow} atr={'pass2'} enter={LogReg === 'Log' ? HandleValidationLogin : HandleValidationRegister} /> : null}
                         <footer className='mlr-fot'>
                             {ErrMsg ? <p className='a-fnt-2 text-center fnt-s14'>{ErrMsg}</p> : null}
                             <h5 className='w-100 text-center fnt-s15'>OR</h5>
@@ -111,7 +110,7 @@ function LogReg({ m }) {
                             </div>
                         </footer>
                     </div>
-                    <span className='mlr-button btn btn-primary pointer mt-15' onClick={LogReg === 'Log' ? HandleExecLogin : HandleExecRegister}>Continue</span>
+                    <span className='mlr-button btn btn-primary pointer mt-15' onClick={LogReg === 'Log' ? HandleValidationLogin : HandleValidationRegister}>Continue</span>
                     <ul className='fl-com f-justify-center'>
                         <Link>HLZ 2024 Copyright</Link>
                         <Link>Contact</Link>

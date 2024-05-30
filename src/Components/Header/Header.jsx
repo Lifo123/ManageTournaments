@@ -24,15 +24,15 @@ function Header() {
             </div>
             <div className='f-row f-align-center g-20'>
                 <ul className='f-row h-list'>
-                    <Link to={'/Home'}>Home</Link>  
+                    <Link to={'/Home'}>Home</Link>
                     <Link to={'/Features'}>Features</Link>
                     <Link to={'/Community'}>Community</Link>
                     <Link to={'/Blog'}>Blog</Link>
                 </ul>
                 {Auth.Auth ? null : <span className='btn-primary pointer b-getstar'>Get Started</span>}
                 <label className='f-row user-sign g-15 f-align-center mr-40'>
-                    <Link to={Auth.Auth ? '/Profile' : '/Login'}><Nopfp Auth={Auth} /></Link>
-                    <Link className='pointer' to={Auth.Auth ? '/Profile' : '/Login'}>{Auth.Auth ? UserData.UserData || 'Username' : 'Sign in'}</Link>
+                    <Link to={Auth.Auth ? `/Profile/${UserData.UserData}` : '/Login'}><Nopfp Auth={Auth} /></Link>
+                    <Link className='pointer' to={Auth.Auth ? `/Profile/${UserData.UserData}` : '/Login'}>{Auth.Auth ? UserData.UserData || 'Username' : 'Sign in'}</Link>
                 </label>
             </div>
         </header>

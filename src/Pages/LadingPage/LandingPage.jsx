@@ -54,14 +54,14 @@ function LandingPage() {
         <div className='f-col w-40 g-30'>
           <ul className='f-row g-20'>
             <li className='l-t-info g-15 f-row f-align-center'>
-              <span className='br-50'></span>
+              <span className='br-50 hover-scale1 pointer'></span>
               <div className='f-col f-justify-center'>
                 <h4>2,245,341</h4>
                 <p className='a-fnt-2'>Members</p>
               </div>
             </li>
             <li className='l-t-info g-15 f-row f-align-center'>
-              <span className='br-50'></span>
+              <span className='br-50 hover-scale1 pointer'></span>
               <div className="f-col f-justify-center">
                 <h4>46,328</h4>
                 <p className='a-fnt-2'>Clubs</p>
@@ -70,14 +70,14 @@ function LandingPage() {
           </ul>
           <ul className='f-row g-20'>
             <li className='l-t-info g-15 f-row f-align-center'>
-              <span className='br-50'></span>
+              <span className='br-50 hover-scale1 pointer'></span>
               <div className="f-col f-justify-center">
                 <h4>828,867</h4>
                 <p className='a-fnt-2'>Servers</p>
               </div>
             </li>
             <li className='l-t-info g-15 f-row f-align-center'>
-              <span className='br-50'></span>
+              <span className='br-50 hover-scale1 pointer'></span>
               <div className="f-col f-justify-center">
                 <h4>1,926,436</h4>
                 <p className='a-fnt-2'>Tournaments</p>
