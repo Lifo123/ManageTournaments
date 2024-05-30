@@ -89,16 +89,16 @@ function LogReg({ m }) {
                             {LogReg === 'Reg' ? null : <Link to={'/ResetPassword'} className='fnt-link f-align-self-end'>Forgot password?</Link>}
                         </div>
                         {LogReg === 'Reg' ? <Input t={'password'} text={'Repeat Password'} f={HandleToggleShow} atr={'pass2'} /> : null}
+                        <footer className='mlr-fot'>
+                            {ErrMsg ? <p className='a-fnt-2 text-center fnt-s14'>{ErrMsg}</p> : null}
+                            <h5 className='w-100 text-center fnt-s15'>OR</h5>
+                            <div className='f-row g-30 mt-25 f-justify-center'>
+                                <span className="ski pointer"></span>
+                                <span className="ski pointer"></span>
+                                <span className="ski pointer"></span>
+                            </div>
+                        </footer>
                     </div>
-                    <footer className='mlr-fot'>
-                        {ErrMsg ? <p className='a-fnt-2 text-center fnt-s14'>{ErrMsg}</p> : null}
-                        <h5 className='w-100 text-center fnt-s15'>OR</h5>
-                        <div className='f-row g-30 mt-25 f-justify-center'>
-                            <span className="ski pointer"></span>
-                            <span className="ski pointer"></span>
-                            <span className="ski pointer"></span>
-                        </div>
-                    </footer>
                     <span className='mlr-button btn btn-primary pointer mt-15' onClick={LogReg === 'Log' ? HandleExecLogin : HandleExecRegister}>Continue</span>
                     <ul className='fl-com f-justify-center'>
                         <Link>HLZ 2024 Copyright</Link>

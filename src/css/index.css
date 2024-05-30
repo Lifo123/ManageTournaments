@@ -8,6 +8,11 @@
     src: url('./Fonts/Inter-VariableFont_slnt\,wght.ttf');
 }
 
+@font-face {
+    font-family: Poppins;
+    src: url('./Fonts/Poppins-VariableFont_wght.ttf');
+}
+
 
 * {
     padding: 0;
