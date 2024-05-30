@@ -51,6 +51,7 @@ function LogReg({ m }) {
         setErrMsg(null);
         setAuth(true);
         localStorage.setItem('Auth', true);
+        navigate('/')
     }
 
     const HandleExecRegister = (e) => {
@@ -71,6 +72,7 @@ function LogReg({ m }) {
         setErrMsg(null);
         setAuth(true);
         localStorage.setItem('Auth', true);
+        navigate('/')
     }
 
     return (
