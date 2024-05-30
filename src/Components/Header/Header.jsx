@@ -25,7 +25,7 @@ function Header() {
                     <Link to={'/Community'}>Community</Link>
                     <Link to={'/Blog'}>Blog</Link>
                 </ul>
-                {Auth.Auth ? null : <Link className='btn btn-primary pointer b-getstar' to={'/Create'}>Get Started</Link>}
+                <Link className='btn btn-primary pointer b-getstar' to={'/Create'}>{Auth.Auth ? 'Create' : 'Get Started'}</Link>
                 <label className='f-row user-sign g-15 f-align-center mr-40'>
                     <Link to={Auth.Auth ? `/Profile/${UserData.UserData}` : '/Login'}><Nopfp Auth={Auth} /></Link>
                     <Link className='pointer' to={Auth.Auth ? `/Profile/${UserData.UserData}` : '/Login'}>{Auth.Auth ? UserData.UserData || 'Username' : 'Sign in'}</Link>

@@ -96,3 +96,17 @@ body {
     color: #dfdfdf;
     list-style: none;
 }
+
+.hm-font-h2 {
+    width: max-content;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Inter-Basic;
+    color: #303030;
+}
+
+.hm-font-p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #738686;
+}

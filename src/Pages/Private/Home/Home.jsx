@@ -39,7 +39,7 @@ export default function Home() {
             <ul className='hm-crdzone f-col g-20'>
               {
                 filteredGames.map((item, index) => (
-                  <CardGames key={index} game={item.game} desc={item.desc} />
+                  <CardGames key={index} title={item.game} desc={item.desc} />
                 ))
               }
             </ul>
