@@ -3,14 +3,16 @@ import { Context } from '../../App'
 
 import './Styles/LogReg.css'
 import Input from '../../Components/Input/Input';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LogReg({ m }) {
+    const navigate = useNavigate();
     //Global States
     const [Auth, setAuth] = useContext(Context);
 
     //States
     const [LogReg, setLogReg] = useState(m);
+    const [ErrMsg, setErrMsg] = useState(null);
 
     //Effects
     useEffect(() => {
@@ -18,6 +20,15 @@ function LogReg({ m }) {
     }, [Auth])
 
     //Functions
+    const HandleToggle = () => {
+        if (LogReg === 'Reg') {
+            setLogReg('Log');
+            navigate('/Login');
+        } else {
+            setLogReg('Reg');
+            navigate('/Register');
+        }
+    }
     const HandleToggleShow = (e) => {
         if (e.target.nextSibling.type === 'text') {
             e.target.nextSibling.type = 'password'
@@ -28,11 +39,38 @@ function LogReg({ m }) {
 
     const HandleExecLogin = (e) => {
         let inputs = e.target.parentElement.querySelectorAll('input[atr]');
+        if (inputs[0].value === '') {
+            setErrMsg('Ingresa un Usuario');
+            return;
+        }
+        if (inputs[1].value === '') {
+            setErrMsg('Ingresa tu contraseña');
+            return;
+        }
 
+        setErrMsg(null);
+        setAuth(true);
+        localStorage.setItem('Auth', true);
     }
 
     const HandleExecRegister = (e) => {
         let inputs = e.target.parentElement.querySelectorAll('input[atr]');
+
+        if (inputs[0].value === '') {
+            setErrMsg('Ingresa un Usuario');
+            return;
+        }
+        if (inputs[1].value === '') {
+            setErrMsg('Ingresa tu contraseña');
+            return;
+        }
+        if (inputs[2].value === '') {
+            setErrMsg('Las contraseñas no coinciden');
+            return;
+        }
+        setErrMsg(null);
+        setAuth(true);
+        localStorage.setItem('Auth', true);
     }
 
     return (
@@ -42,7 +80,7 @@ function LogReg({ m }) {
                 <form className='f-col relative g-25'>
                     <header className='f-col g-5'>
                         <h1 className='text-center'>{LogReg === 'Reg' ? 'Sign Up' : 'Sign In'}</h1>
-                        <p className='a-fnt-2 text-center'>Don’t have an account? <span className='fnt-link' onClick={() => setLogReg(LogReg === 'Log' ? 'Reg' : 'Log')}>{LogReg === 'Reg' ? 'Sign In' : 'Sign Up'}</span></p>
+                        <p className='a-fnt-2 text-center'>Don’t have an account? <span className='fnt-link' onClick={HandleToggle}>{LogReg === 'Reg' ? 'Sign In' : 'Sign Up'}</span></p>
                     </header>
                     <div className='f-col g-25 mt-10 mlr-js'>
                         <Input text={'Username'} n={'username'} atr={'user'} />
@@ -53,7 +91,8 @@ function LogReg({ m }) {
                         {LogReg === 'Reg' ? <Input t={'password'} text={'Repeat Password'} f={HandleToggleShow} atr={'pass2'} /> : null}
                     </div>
                     <footer className='mlr-fot'>
-                        <h5 className='w-100 text-center'>OR</h5>
+                        {ErrMsg ? <p className='a-fnt-2 text-center fnt-s14'>{ErrMsg}</p> : null}
+                        <h5 className='w-100 text-center fnt-s15'>OR</h5>
                         <div className='f-row g-30 mt-25 f-justify-center'>
                             <span className="ski pointer"></span>
                             <span className="ski pointer"></span>
