@@ -1,17 +1,17 @@
 import './Styles/LadingPage.css'
-import { useContext } from 'react';
-import { Context } from '../../App';
+import React, { useContext } from 'react';
+
+import { Link } from 'react-router-dom';
 
 import Header from '../../Components/Header/Header';
-import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
 
 function LandingPage() {
-  const [Auth, setAuth] = useContext(Context)
+
   return (
     <>
       <Header />
-      <main className='lan-main d-flex sticky f-justify-center g-120 w-80'>
+      <main className='lan-main d-flex sticky f-justify-center g-120 w-75'>
         <div className='f-col g-20 lan-left'>
           <h1 className=''>Manage your Tournaments <span>Free</span></h1>
           <p className='a-fnt-2'>Choosing colors or typography for your website? Use the Toolbar below to realize your choices. and manage complete free all tournaments with Admin mode.</p>
@@ -88,7 +88,7 @@ function LandingPage() {
       </div>
 
       <h2 className='a-fnt-1 m-auto w-45 text-center mt-160' style={{ fontSize: '54px' }}>Pellentesque suscipit fringilla libero eu.</h2>
-      <Link className='btn btn-primary mx-auto mt-40 mb-60' style={{fontSize: '14px'}}>Get a Demo</Link>
+      <Link className='btn btn-primary mx-auto mt-40 mb-60' style={{ fontSize: '14px' }}>Get a Demo</Link>
       <Footer />
     </>
   )

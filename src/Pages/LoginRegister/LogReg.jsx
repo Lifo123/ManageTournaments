@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import { Context } from '../../App'
+import { AuthContext, UserContext } from '../../App'
 
 import './Styles/LogReg.css'
 import Input from '../../Components/Input/Input';
@@ -8,7 +8,8 @@ import { Link, useNavigate } from 'react-router-dom';
 function LogReg({ m }) {
     const navigate = useNavigate();
     //Global States
-    const [Auth, setAuth] = useContext(Context);
+    const Auth = useContext(AuthContext);
+    const UserData = useContext(UserContext);
 
     //States
     const [LogReg, setLogReg] = useState(m);
@@ -16,8 +17,15 @@ function LogReg({ m }) {
 
     //Effects
     useEffect(() => {
-        setAuth(localStorage.getItem('Auth') === 'true')
-    }, [Auth])
+        Auth.setAuth(localStorage.getItem('Auth') === 'true')
+    }, [Auth.Auth])
+
+    useEffect(() => {
+        console.log(Auth.Auth)
+        if(Auth.Auth){
+            navigate('/')
+        }
+    }, []);
 
     //Functions
     const HandleToggle = () => {
@@ -49,7 +57,8 @@ function LogReg({ m }) {
         }
 
         setErrMsg(null);
-        setAuth(true);
+        Auth.setAuth(true);
+        UserData.setUserData(inputs[0].value)
         localStorage.setItem('Auth', true);
         navigate('/')
     }
@@ -70,7 +79,8 @@ function LogReg({ m }) {
             return;
         }
         setErrMsg(null);
-        setAuth(true);
+        Auth.setAuth(true);
+        UserData.setUserData(inputs[0].value)
         localStorage.setItem('Auth', true);
         navigate('/')
     }

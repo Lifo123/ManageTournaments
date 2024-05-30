@@ -1,16 +1,20 @@
-import { useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react';
+
 import './Header.css'
-import { Context } from '../../App'
+import { AuthContext, UserContext } from '../../App'
 import { Link, useNavigate } from 'react-router-dom';
 import Nopfp from '../NoPfp/Nopfp';
 
 function Header() {
-    const [Auth, setAuth] = useContext(Context);
+    //Global Context State
+    const Auth = useContext(AuthContext);
+    const UserData = useContext(UserContext);
+
     const navigate = useNavigate();
 
     useEffect(() => {
-        localStorage.setItem('Auth', Auth);
-    }, [Auth]);
+        localStorage.setItem('Auth', Auth.Auth);
+    }, [Auth.Auth]);
 
     return (
         <header className='header f-row w-100'>
@@ -20,15 +24,15 @@ function Header() {
             </div>
             <div className='f-row f-align-center g-20'>
                 <ul className='f-row h-list'>
-                    <Link to={'/Home'}>Home</Link>
+                    <Link to={'/Home'}>Home</Link>  
                     <Link to={'/Features'}>Features</Link>
                     <Link to={'/Community'}>Community</Link>
                     <Link to={'/Blog'}>Blog</Link>
                 </ul>
-                {Auth ? null : <span className='btn-primary pointer b-getstar'>Get Started</span>}
+                {Auth.Auth ? null : <span className='btn-primary pointer b-getstar'>Get Started</span>}
                 <label className='f-row user-sign g-15 f-align-center mr-40'>
-                    <Link to={'/Login'}><Nopfp Auth={Auth} /></Link>
-                    <Link className='pointer' to={'/Login'}>{Auth ? 'Username' : 'Sign in'}</Link>
+                    <Link to={Auth.Auth ? '/Profile' : '/Login'}><Nopfp Auth={Auth} /></Link>
+                    <Link className='pointer' to={Auth.Auth ? '/Profile' : '/Login'}>{Auth.Auth ? UserData.UserData || 'Username' : 'Sign in'}</Link>
                 </label>
             </div>
         </header>
