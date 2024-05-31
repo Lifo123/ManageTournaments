@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Styles/GrafficMatch.css'
 import Match from './Match'
 
@@ -13,9 +13,9 @@ function GrafficMatch({ scale, data }) {
   return (
     <div className='f-col g-20'>
       <div className='f-row g-20'>
-        <span className="grfc-btn pointer" onClick={() => setGroup('A')}>Group A</span>
-        <span className="grfc-btn pointer" onClick={() => setGroup('B')}>Group B</span>
-        <span className="grfc-btn pointer" onClick={() => setGroup('C')}>Group C</span>
+        {data && Object.entries(data).map((item, index) => (
+          <span key={index} className="grfc-btn pointer" onClick={() => setGroup(item[0])}>Group {item[0]}</span>
+        ))}
       </div>
       <div className='grfc-ctrl d-flex relative f-center m-auto' style={{ transform: `scale(${scale})` }}>
         <div className='grfc-center f-row f-align-center'>

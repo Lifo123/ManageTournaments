@@ -15,13 +15,14 @@ export default function Tournament() {
     const User = useContext(UserContext);
 
     //States
+    const [Save, setSave] = useState(false);
     const [TournamentData, setTourData] = useState(null);
 
     //Functions
     const HandleContentEditable = (e) => {
+        setSave((v) => !v);
         e.target.parentElement.querySelectorAll('[edit]').forEach(element => {
-            const isEditable = element.contentEditable === 'true';
-            element.contentEditable = isEditable ? 'false' : 'true';
+            element.contentEditable = !Save;
         });
     }
 
@@ -42,7 +43,7 @@ export default function Tournament() {
                 }
             })
         }, 1000)
-    }, [])
+    }, [TournamentData])
 
     return (
         <>
@@ -52,7 +53,7 @@ export default function Tournament() {
                 {
                     TournamentData ? (
                         <main className='w-80 f-col mt-40 g-20'>
-                            <span className='btn btn-primary pointer d-flex f-align-self-end' onClick={HandleContentEditable}>Edit</span>
+                            <span className='t-save btn btn-primary pointer d-flex f-align-self-end' onClick={HandleContentEditable}>{Save ? 'Save' : 'Edit'}</span>
                             <div>
                                 <h5 edit={'Tf'}>{TournamentData.TourInfo.split('|')[0]}</h5>
                                 <p edit={'Tf'}>{TournamentData.TourInfo.split('|')[1]}</p>
@@ -66,60 +67,15 @@ export default function Tournament() {
                             <div>
                                 <h5>Teams</h5>
                                 <div className='f-row g-60'>
-                                    <ul className="f-col g-5">
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[0]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[1]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[2]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[3]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[4]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[5]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[6]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[7]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[8]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[9]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[10]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[11]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[12]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[13]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[14]}</p>
-                                        <p edit={'TgA'}>{TournamentData.TourTeams.A.split('|')[15]}</p>
-                                    </ul>
-                                    <ul className="f-col g-5">
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[0]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[1]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[2]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[3]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[4]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[5]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[6]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[7]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[8]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[9]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[10]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[11]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[12]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[13]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[14]}</p>
-                                        <p edit={'TgB'}>{TournamentData.TourTeams.B.split('|')[15]}</p>
-                                    </ul>
-                                    <ul className="f-col g-5">
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[0]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[1]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[2]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[3]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[4]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[5]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[6]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[7]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[8]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[9]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[10]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[11]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[12]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[13]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[14]}</p>
-                                        <p edit={'TgC'}>{TournamentData.TourTeams.C.split('|')[15]}</p>
-                                    </ul>
+                                    {TournamentData && Object.entries(TournamentData.TourTeams).map((item, index) => (
+                                        <ul key={index} className="f-col g-5" gt={item[0]}>
+                                            {
+                                                item[1].split('|').map((element, index) => (
+                                                    <p key={index} edit={`Tg${item[0]}`}>{element}</p>
+                                                ))
+                                            }
+                                        </ul>
+                                    ))}
                                 </div>
                             </div>
                             <div className=''>
@@ -127,7 +83,7 @@ export default function Tournament() {
                             </div>
                             <GrafficMatch scale={0.9} data={TournamentData.TourMatchs} />
                         </main>
-                    ) : <Loading t={2}/>
+                    ) : <Loading t={2} />
                 }
             </div>
             <Footer />
