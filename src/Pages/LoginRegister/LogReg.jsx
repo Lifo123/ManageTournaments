@@ -4,7 +4,6 @@ import { AuthContext, UserContext } from '../../App'
 
 import './Styles/LogReg.css'
 import Input from '../../Components/Input/Input';
-import Loading from '../../Components/Loading/Loading';
 
 function LogReg({ m }) {
     const navigate = useNavigate();
@@ -51,7 +50,7 @@ function LogReg({ m }) {
             setErrMsg('Ingresa tu contraseña');
             return;
         }
-        HandleAuthRedirect(inputs[0].value);
+        HandleAuthRedirect(inputs[0].value, 'Admin');
     }
 
     const HandleValidationRegister = () => {
@@ -69,14 +68,15 @@ function LogReg({ m }) {
             setErrMsg('Las contraseñas no coinciden');
             return;
         }
-        HandleAuthRedirect(inputs[0].value);
+        HandleAuthRedirect(inputs[0].value, mode);
     }
 
-    const HandleAuthRedirect = (user) => {
+    const HandleAuthRedirect = (user, mode) => {
         setErrMsg(null);
         Auth.setAuth(true);
-        UserData.setUserData(user);
+        UserData.setUserData([user, mode]);
         navigate('/Home');
+
     }
 
     return (

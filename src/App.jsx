@@ -14,8 +14,17 @@ function App() {
   }, [Auth])
 
   useEffect(() => {
-    localStorage.setItem('User', UserData);
-  }, [UserData])
+    localStorage.setItem('User', UserData)
+  }, [UserData]);
+
+  useEffect(() => {
+    if (UserData.length > 0) {
+      setUserData(UserData.split(',')); 
+    }
+  }, [])
+
+
+
 
   return (
     <AuthContext.Provider value={{ Auth, setAuth }}>

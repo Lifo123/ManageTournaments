@@ -8,8 +8,6 @@
 }
 .grfc-ctrl{
     background-color: #FFF;
-    transform: scale(1);
-
     height: 740px;
     width: 1360px;
 }
@@ -40,7 +38,7 @@
     border: solid 2px var(--br-normal);
     background-color: #FFF;
     border-radius: 6px;
-    height: 80px;   
+    height: 80px;
     overflow: hidden;
     transform: translateY(-50%);
 }
@@ -63,12 +61,17 @@
     font-weight: 600;
 }
 .gr-match div > p {
+    min-width: 120px;
     padding-inline: 30px;
+    height: 100%;
     font-size: 14px;
     font-weight: 600;
     color: var(--font-link);
     text-decoration: underline;
     text-underline-offset: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gr-detail{
