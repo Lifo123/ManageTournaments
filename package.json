@@ -1,16 +1,16 @@
 {
-  "homepage": "https:/Lifo123.github.io/RouteTest",
   "name": "reactroutertesting",
   "private": true,
+  "homepage": "https://Lifo123.github.io/ManageTournaments",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "sass --style=compressed src/css/Framework/scss/Main.scss src/css/Framework/Flifo.css",
+    "build": "sass --style=compressed src/css/Framework/scss/Main.scss src/css/Framework/Flifo.css  && vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "git": "^0.1.5",
