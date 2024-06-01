@@ -5,13 +5,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite --host",
-    "buildsass": "sass --style=compressed src/css/Framework/scss/Main.scss src/css/Framework/Flifo.css",
+    "sass": "sass --style=compressed src/css/Framework/scss/Main.scss src/css/Framework/Flifo.css",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview --host",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview --host"
   },
   "dependencies": {
     "git": "^0.1.5",
