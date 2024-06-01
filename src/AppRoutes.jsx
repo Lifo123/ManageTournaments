@@ -19,23 +19,24 @@ const SuspenseWrapper = ({ children }) => (
 const AppRoutes = ({ Auth }) => {
     return (
         <Routes>
-            <Route path="/" element={<SuspenseWrapper><LandingPage /></SuspenseWrapper>} />
-            <Route path="/ManageTournaments" element={<SuspenseWrapper><LandingPage /></SuspenseWrapper>} />
-            <Route path="/Landing" element={<SuspenseWrapper><LandingPage /></SuspenseWrapper>} />
-            <Route path="*" element={<SuspenseWrapper><PageNotFound /></SuspenseWrapper>} />
-            <Route path="Login" element={<SuspenseWrapper><LogReg m={'Log'} /></SuspenseWrapper>} />
-            <Route path="Register" element={<SuspenseWrapper><LogReg m={'Reg'} /></SuspenseWrapper>} />
+            <Route index path='/ManageTournaments'>
+                <Route index element={<SuspenseWrapper><LandingPage /></SuspenseWrapper>} />
+                <Route path="Login" element={<SuspenseWrapper><LogReg m={'Log'} /></SuspenseWrapper>} />
+                <Route path="Register" element={<SuspenseWrapper><LogReg m={'Reg'} /></SuspenseWrapper>} />
 
-            <Route element={<SuspenseWrapper><PrivateRoutes Auth={Auth} /></SuspenseWrapper>} >
-                <Route path='/Home'>
-                    <Route index element={<SuspenseWrapper><Home /></SuspenseWrapper>} />
+                
+                <Route element={<SuspenseWrapper><PrivateRoutes Auth={Auth} /></SuspenseWrapper>} >
+                    <Route path='/Home'>
+                        <Route index element={<SuspenseWrapper><Home /></SuspenseWrapper>} />
+                    </Route>
+                    <Route path="Game" element={<SuspenseWrapper><Game /></SuspenseWrapper>} />
+                    <Route path='Tournament'>
+                        <Route path="View/:id" element={<SuspenseWrapper><Tournament /></SuspenseWrapper>} />
+                    </Route>
+                    <Route path='/Profile/:user' element={<SuspenseWrapper><Profile /></SuspenseWrapper>} />
                 </Route>
-                <Route path="Game" element={<SuspenseWrapper><Game /></SuspenseWrapper>} />
-                <Route path='Tournament'>
-                    <Route path="View/:id" element={<SuspenseWrapper><Tournament /></SuspenseWrapper>} />
-                </Route>
-                <Route path='/Profile/:user' element={<SuspenseWrapper><Profile /></SuspenseWrapper>} />
             </Route>
+            <Route path="*" element={<SuspenseWrapper><PageNotFound /></SuspenseWrapper>} />
         </Routes>
     )
 }

@@ -5,7 +5,7 @@ export default function CardTournament({ title, desc, id }) {
     const navigate = useNavigate();
 
     const HandleNavigate = () => {
-        navigate(`/Tournament/View/${id}`)
+        navigate(`/ManageTournaments/Tournament/View/${id}`)
     }
 
     return (
