@@ -21,7 +21,7 @@ function LandingPage() {
           </div>
         </div>
         <div className='d-flex f-center lan-right'>
-          <img src="/src/public/ImgLanding.png" alt="Landing img" />
+          <img src="./ImgLanding.png" alt="Landing img" />
         </div>
       </main>
       <div className='f-col lan-sec m-auto w-100'>
