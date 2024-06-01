@@ -1,16 +1,16 @@
 @font-face {
     font-family: Rubik;
-    src: url('./Fonts/Rubik-VariableFont_wght.ttf');
+    src: url('./Fonts/Rubik-VariableFont.ttf');
 }
 
 @font-face {
     font-family: Inter-Basic;
-    src: url('./Fonts/Inter-VariableFont_slnt\,wght.ttf');
+    src: url('./Fonts/Inter-VariableFont.ttf');
 }
 
 @font-face {
     font-family: Poppins;
-    src: url('./Fonts/Poppins-VariableFont_wght.ttf');
+    src: url('./Fonts/Poppins-VariableFont.ttf');
 }
 
 

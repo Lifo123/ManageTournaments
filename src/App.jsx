@@ -18,7 +18,7 @@ function App() {
   }, [UserData]);
 
   useEffect(() => {
-    if (UserData.length > 0) {
+    if (UserData !== null) {
       setUserData(UserData.split(',')); 
     }
   }, [])
