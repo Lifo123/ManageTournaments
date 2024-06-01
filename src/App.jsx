@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     if (UserData !== null) {
-      setUserData(UserData.split(',')); 
+      setUserData(UserData.split(','));
     }
   }, [])
 
@@ -29,7 +29,7 @@ function App() {
   return (
     <AuthContext.Provider value={{ Auth, setAuth }}>
       <UserContext.Provider value={{ UserData, setUserData }}>
-        <BrowserRouter>
+        <BrowserRouter basename="/ManageTournaments">
           <AppRoutes Auth={Auth} />
         </BrowserRouter>
       </UserContext.Provider>

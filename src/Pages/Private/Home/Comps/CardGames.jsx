@@ -5,7 +5,7 @@ export default function CardGames({ title, desc }) {
 
     const HandleNavigate = () => {
         let url = title.replace(/\s+/g, '-');
-        navigate(`/ManageTournaments/Game?g=${url}`);
+        navigate(`Game?g=${url}`);
     }
     return (
         <li className='hm-crdgame g-10 br-6 pointer' onClick={HandleNavigate}>

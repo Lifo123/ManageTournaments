@@ -18,7 +18,7 @@ function LogReg({ m }) {
     //Effects
     useEffect(() => {
         if (Auth.Auth) {
-            navigate('/ManageTournaments')
+            navigate('/')
         }
     }, []);
 
@@ -26,10 +26,10 @@ function LogReg({ m }) {
     const HandleToggleRoute = () => {
         if (LogReg === 'Reg') {
             setLogReg('Log');
-            navigate('/ManageTournaments/Login');
+            navigate('/Login');
         } else {
             setLogReg('Reg');
-            navigate('/ManageTournaments/Register');
+            navigate('/Register');
         }
     }
     const HandleToggleShow = (e) => {
@@ -75,13 +75,13 @@ function LogReg({ m }) {
         setErrMsg(null);
         Auth.setAuth(true);
         UserData.setUserData([user, mode]);
-        navigate('/ManageTournaments/Home');
+        navigate('/Home');
 
     }
 
     return (
         <main className='main-LogReg fixed h-100 w-100 relative'>
-            <Link className='mlr-logo ski absolute' to={'/ManageTournaments'}></Link>
+            <Link className='mlr-logo ski absolute' to={'/'}></Link>
             <div className='mlr-form absolute'>
                 <form className='f-col relative g-25'>
                     <header className='f-col g-5'>
@@ -92,7 +92,7 @@ function LogReg({ m }) {
                         <Input text={'Username'} n={'username'} atr={'user'} enter={LogReg === 'Log' ? HandleValidationLogin : HandleValidationRegister} />
                         <div className='f-col g-10'>
                             <Input t={'password'} text={'Password'} f={HandleToggleShow} atr={'pass1'} enter={LogReg === 'Log' ? HandleValidationLogin : HandleValidationRegister} />
-                            {LogReg === 'Reg' ? null : <Link to={'/ManageTournaments/ResetPassword'} className='fnt-link f-align-self-end'>Forgot password?</Link>}
+                            {LogReg === 'Reg' ? null : <Link to={'ResetPassword'} className='fnt-link f-align-self-end'>Forgot password?</Link>}
                         </div>
                         {LogReg === 'Reg' ? <Input t={'password'} text={'Repeat Password'} f={HandleToggleShow} atr={'pass2'} enter={LogReg === 'Log' ? HandleValidationLogin : HandleValidationRegister} /> : null}
                         <footer className='mlr-fot'>

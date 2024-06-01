@@ -16,8 +16,8 @@ function LandingPage() {
           <h1 className=''>Manage your Tournaments <span>Free</span></h1>
           <p className='a-fnt-2'>Choosing colors or typography for your website? Use the Toolbar below to realize your choices. and manage complete free all tournaments with Admin mode.</p>
           <div className='f-row g-30 mt-1 f-row'>
-            <Link className='btn btn-primary' to={'ManageTournaments/Create'}>Get Started</Link>
-            <Link className='btn btn-secondary' to={'ManageTournaments/Home'}>View Tournaments</Link>
+            <Link className='btn btn-primary' to={'Create'}>Get Started</Link>
+            <Link className='btn btn-secondary' to={'Home'}>View Tournaments</Link>
           </div>
         </div>
         <div className='d-flex f-center lan-right'>
