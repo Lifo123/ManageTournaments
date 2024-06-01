@@ -29,7 +29,7 @@ function App() {
   return (
     <AuthContext.Provider value={{ Auth, setAuth }}>
       <UserContext.Provider value={{ UserData, setUserData }}>
-        <BrowserRouter basename="/ManageTournaments">
+        <BrowserRouter basename="ManageTournaments/">
           <AppRoutes Auth={Auth} />
         </BrowserRouter>
       </UserContext.Provider>

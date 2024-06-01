@@ -1,5 +1,4 @@
 import './Styles/LadingPage.css'
-import React from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -88,7 +87,7 @@ function LandingPage() {
       </div>
 
       <h2 className='a-fnt-1 m-auto w-45 text-center mt-160' style={{ fontSize: '54px' }}>Pellentesque suscipit fringilla libero eu.</h2>
-      <Link className='btn btn-primary mx-auto mt-40 mb-60' style={{ fontSize: '14px' }}>Get a Demo</Link>
+      <Link to={'//'} className='btn btn-primary mx-auto mt-40 mb-60' style={{ fontSize: '14px' }}>Get a Demo</Link>
       <Footer />
     </>
   )

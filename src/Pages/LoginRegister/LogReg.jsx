@@ -18,7 +18,7 @@ function LogReg({ m }) {
     //Effects
     useEffect(() => {
         if (Auth.Auth) {
-            navigate('/')
+            navigate('//')
         }
     }, []);
 
@@ -68,7 +68,7 @@ function LogReg({ m }) {
             setErrMsg('Las contraseñas no coinciden');
             return;
         }
-        HandleAuthRedirect(inputs[0].value, mode);
+        HandleAuthRedirect(inputs[0].value, 'Admin');
     }
 
     const HandleAuthRedirect = (user, mode) => {
@@ -81,7 +81,7 @@ function LogReg({ m }) {
 
     return (
         <main className='main-LogReg fixed h-100 w-100 relative'>
-            <Link className='mlr-logo ski absolute' to={'/'}></Link>
+            <Link className='mlr-logo ski absolute' to={'//'}></Link>
             <div className='mlr-form absolute'>
                 <form className='f-col relative g-25'>
                     <header className='f-col g-5'>

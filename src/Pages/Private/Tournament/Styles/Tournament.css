@@ -3,3 +3,11 @@
     top: 20px;
     z-index: 100;
 }
+.v-tournament div h5{
+    font-size: 22px;
+    font-family: Inter-Basic;
+    padding: 8px 5px;
+    color: var(--primary);
+    border-bottom: solid 1px var(--br-low);
+    margin-bottom: 18px;
+}

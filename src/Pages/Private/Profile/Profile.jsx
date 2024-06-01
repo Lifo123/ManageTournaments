@@ -1,11 +1,13 @@
 import './Styles/Profile.css'
 import { lazy, useContext } from 'react'
 import { AuthContext, UserContext } from '../../../App'
+import { useNavigate } from 'react-router-dom'
 
 const Header = lazy(() => import('../../../Components/Header/Header'))
 
 
 export default function Profile() {
+    const navigate = useNavigate();
     const { setAuth } = useContext(AuthContext);
     const { setUserData } = useContext(UserContext);
 
@@ -15,6 +17,7 @@ export default function Profile() {
         setUserData('');
         localStorage.clear('Auth')
         localStorage.clear('User');
+        navigate('/Login')
     }
 
     return (

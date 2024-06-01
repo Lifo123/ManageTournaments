@@ -1,10 +1,10 @@
-import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
+import PageNotFound from '../PageNoFound/PageNotFound';
 
-function PrivateRoutes({ Auth, redirectPath = '//' }) {
+function PrivateRoutes({ Auth }) {
   if (!Auth) {
     console.log('U dont have permissions');
-    return <Navigate to={redirectPath} replace />
+    return <Navigate to='/error' replace />
   }
   return <Outlet />
 }

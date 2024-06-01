@@ -1,0 +1,27 @@
+.t-t-div {
+    max-width: 60%;
+    height: fit-content;
+}
+
+.group-team {
+    border: solid 1px var(--br-normal);
+    width: 220px;
+    overflow: hidden;
+}
+.t-list{
+    height: 40px;
+    border-bottom: solid 1px var(--br-normal);
+}
+.t-list p{
+    padding: 0px 14px;
+}
+.t-list span{
+    border-left: solid 1px var(--br-normal);
+    width: 40px;
+    height: 100%;
+}
+
+.add-btn{
+    background-color: var(--sk-in);
+    stroke: var(--br-normal) !important;
+}

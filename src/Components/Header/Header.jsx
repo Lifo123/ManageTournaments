@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 
 import './Header.css'
 import { AuthContext, UserContext } from '../../App'
@@ -11,7 +11,7 @@ function Header() {
     const UserData = useContext(UserContext);
 
     const navigate = useNavigate();
-    
+
     return (
         <header className='header f-row w-100'>
             <div className='f-row logo-div f-align-center ml-40 g-10'>
