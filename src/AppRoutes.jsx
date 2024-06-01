@@ -20,6 +20,8 @@ const AppRoutes = ({ Auth }) => {
     return (
         <Routes>
             <Route path="/" element={<SuspenseWrapper><LandingPage /></SuspenseWrapper>} />
+            <Route path="/ManageTournaments" element={<SuspenseWrapper><LandingPage /></SuspenseWrapper>} />
+            <Route path="/Landing" element={<SuspenseWrapper><LandingPage /></SuspenseWrapper>} />
             <Route path="*" element={<SuspenseWrapper><PageNotFound /></SuspenseWrapper>} />
             <Route path="Login" element={<SuspenseWrapper><LogReg m={'Log'} /></SuspenseWrapper>} />
             <Route path="Register" element={<SuspenseWrapper><LogReg m={'Reg'} /></SuspenseWrapper>} />
