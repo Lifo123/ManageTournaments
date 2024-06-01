@@ -1,1 +1,0 @@
-import{j as e,N as a,O as o}from"./index-DIRZ2ndL.js";function n({Auth:t,redirectPath:s="/ManageTournaments"}){return t?e.jsx(o,{}):(console.log("U dont have permissions"),e.jsx(a,{to:s,replace:!0}))}export{n as default};
