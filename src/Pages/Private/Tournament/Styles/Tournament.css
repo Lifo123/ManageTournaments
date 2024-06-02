@@ -11,3 +11,11 @@
     border-bottom: solid 1px var(--br-low);
     margin-bottom: 18px;
 }
+
+
+.tm-search li{
+    border-bottom: solid 1px var(--br-low);
+    padding: 14px 0px;
+    list-style: none;
+    font-size: 15px;
+}

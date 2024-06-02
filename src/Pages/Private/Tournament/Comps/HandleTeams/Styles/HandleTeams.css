@@ -1,27 +1,62 @@
 .t-t-div {
-    max-width: 60%;
     height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,
+            minmax(220px, 1fr));
+
 }
 
 .group-team {
     border: solid 1px var(--br-normal);
     width: 220px;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.2s;
     overflow: hidden;
 }
-.t-list{
+
+.group-team:hover {
+    box-shadow: 1px 2px 3px #00000039;
+}
+
+.t-t-div:has(.group-team:hover)> :not(:hover) {
+    transform: scale(0.99);
+    opacity: 0.9;
+}
+
+.t-list {
     height: 40px;
     border-bottom: solid 1px var(--br-normal);
 }
-.t-list p{
+
+.t-list:hover {
+    border: solid 1px var(--br-normal);
+    box-shadow: 1px 2px 3px #00000039;
+    border-radius: 6px 6px 4px 4px;
+    position: relative;
+    z-index: 10;
+}
+
+.t-list p {
     padding: 0px 14px;
 }
-.t-list span{
+.t-list p > span{
+    font-family: sans-serif !;
+}
+
+.t-list > span {
     border-left: solid 1px var(--br-normal);
     width: 40px;
     height: 100%;
 }
 
-.add-btn{
+.t-list:has(.add-btn) {
+    padding: 20px !important;
+}
+
+.add-btn {
+    min-height: 46px;
+    flex: 1;
     background-color: var(--sk-in);
     stroke: var(--br-normal) !important;
 }

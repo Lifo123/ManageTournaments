@@ -1,7 +1,7 @@
 {
+  "homepage": "https://Lifo123.github.io/ManageTournaments",
   "name": "reactroutertesting",
   "private": true,
-  "homepage": "https://Lifo123.github.io/ManageTournaments",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -14,10 +14,14 @@
     "preview": "vite preview --host"
   },
   "dependencies": {
+    "clipboard": "^2.0.11",
+    "copy": "^0.3.2",
     "git": "^0.1.5",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "to": "^0.2.9"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

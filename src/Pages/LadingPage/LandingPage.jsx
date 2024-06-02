@@ -15,8 +15,8 @@ function LandingPage() {
           <h1 className=''>Manage your Tournaments <span>Free</span></h1>
           <p className='a-fnt-2'>Choosing colors or typography for your website? Use the Toolbar below to realize your choices. and manage complete free all tournaments with Admin mode.</p>
           <div className='f-row g-30 mt-1 f-row'>
-            <Link className='btn btn-primary' to={'Create'}>Get Started</Link>
-            <Link className='btn btn-secondary' to={'Home'}>View Tournaments</Link>
+            <Link className='btn btn-primary' to={'/Create'}>Get Started</Link>
+            <Link className='btn btn-secondary' to={'/Home'}>View Tournaments</Link>
           </div>
         </div>
         <div className='d-flex f-center lan-right'>
@@ -87,7 +87,7 @@ function LandingPage() {
       </div>
 
       <h2 className='a-fnt-1 m-auto w-45 text-center mt-160' style={{ fontSize: '54px' }}>Pellentesque suscipit fringilla libero eu.</h2>
-      <Link to={'//'} className='btn btn-primary mx-auto mt-40 mb-60' style={{ fontSize: '14px' }}>Get a Demo</Link>
+      <Link to={'/'} className='btn btn-primary mx-auto mt-40 mb-60' style={{ fontSize: '14px' }}>Get a Demo</Link>
       <Footer />
     </>
   )

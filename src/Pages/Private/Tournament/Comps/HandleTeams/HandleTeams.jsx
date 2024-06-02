@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import './Styles/HandleTeams.css'
+import { useContext, useState } from 'react'
+import { TourInfoContext } from '../../Tournament';
 
 export default function HandleTeams() {
     //States
@@ -11,35 +12,32 @@ export default function HandleTeams() {
     }
 
     return (
-        <div>
-            <h5>Teams</h5>
-            <div className='t-t-div f-row g-20 f-wrap'>
-                {Array.from({ length: Groups }, (_, index) => (
-                    <Group key={index} />
-                ))}
-                {
-                    Groups <= 5 ? (
-                        <ul className='group-team d-flex f-center br-8 pointer add-btn' onClick={HandleAddGroup}>
-                            <AddIcon h={20} />
-                        </ul>
-                    ) : null
-                }
-            </div>
+        <div className='t-t-div w-60 g-20'>
+            {Array.from({ length: Groups }, (_, index) => (
+                <Group key={index} tgr={index} />
+            ))}
+            {
+                Groups <= 5 ? (
+                    <ul className='group-team d-flex f-center br-8 pointer add-btn' onClick={HandleAddGroup}>
+                        <AddIcon h={20} />
+                    </ul>
+                ) : null
+            }
         </div>
     )
 }
 
 //Other Components
-function Group() {
+function Group({ tgr }) {
     //States
-    const [Teams, setTeams] = useState([{ team: 'TBD', id: '1' }])
+    const [Teams, setTeams] = useState([{ team: 'TBD', id: tgr }])
 
     //Functions
     const HandleAddTeam = () => {
-        setTeams([...Teams, { team: 'TBD', id: '0' }]);
+        setTeams([...Teams, { team: 'TBD', id: tgr }]);
     }
     return (
-        <ul className='group-team f-col br-6'>
+        <ul className='group-team f-col br-6' tgr={tgr + 1}>
             {
                 Teams && Teams.map((item, index) => (
                     <Team key={index} data={item} id={index + 1} />
@@ -54,10 +52,17 @@ function Group() {
 }
 
 function Team({ data, id }) {
+    //Local Context
+    const TourContext = useContext(TourInfoContext)
+
+    const HandleAddTeam = () => {
+
+    }
+
     return (
         <li className='t-list f-row f-align-center'>
-            <p className='w-90'>{data.team}</p>
-            <span className='w-10 d-flex f-center h-100'>{id}</span>
+            <p className='w-90 d-flex f-align-center h-100' edit={'ttn'} contentEditable={TourContext.Save}>{data.team}</p>
+            <span className='w-10 d-flex f-center h-100' edit={'ttgrp'} contentEditable={TourContext.Save}>{id}</span>
         </li>
     )
 }
