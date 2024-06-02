@@ -1,60 +1,57 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './Styles/GrafficMatch.css'
 import Match from './Match'
 
-function GrafficMatch({ scale, data }) {
+function GrafficMatch({ scale, data, left }) {
   //States
-  const [Group, setGroup] = useState('A');
-
-  let m8 = data[Group][1].split('|');
-  let m4 = data[Group][2].split('|');
-  let m2 = data[Group][3].split('|');
+  const [GroupMatch, setGroupMatch] = useState('');
+  console.log(data);
 
   return (
     <div className='f-col g-20'>
       <div className='f-row g-20'>
-        {data && Object.entries(data).map((item, index) => (
-          <span key={index} className="grfc-btn pointer" onClick={() => setGroup(item[0])}>Group {item[0]}</span>
+        {data.map((item, index) => (
+          <span key={index} className="grfc-btn pointer">Group {index + 1}</span>
         ))}
       </div>
-      <div className='grfc-ctrl d-flex relative f-center m-auto' style={{ transform: `scale(${scale})` }}>
+      <div className='grfc-ctrl d-flex relative f-center m-auto' style={{ transform: `scale(${scale || 1})`, left: `${left}px` }}>
         <div className='grfc-center f-row f-align-center'>
           <aside className='gra-left relative'>
             <div className='gra-b gr-top gra-ALTop absolute'>
               <div className='gra-c gr-top absolute'>
-                <Match pState={'top'} team={m8[0]} />
-                <Match team={m8[1]} />
+                <Match pState={'top'} />
+                <Match />
               </div>
               <div className='gra-c gr-bot absolute'>
-                <Match pState={'top'} team={m8[2]} />
-                <Match team={m8[3]} />
+                <Match pState={'top'} />
+                <Match />
               </div>
               <div className='absolute' style={{ right: '0px', height: '101%', width: '43%', top: '-1px' }}>
-                <Match pState={'top'} team={m4[0]} />
-                <Match team={m4[1]} />
+                <Match pState={'top'} />
+                <Match />
               </div>
             </div>
             <div className='gra-b gr-bot gra-ALBot absolute'>
               <div className='gra-c gr-top absolute'>
-                <Match pState={'top'} team={m8[4]} />
-                <Match team={m8[5]} />
+                <Match pState={'top'} />
+                <Match />
               </div>
               <div className='gra-c gr-bot absolute'>
-                <Match pState={'top'} team={m8[6]} />
-                <Match team={m8[7]} />
+                <Match pState={'top'} />
+                <Match />
               </div>
               <div className='absolute' style={{ right: '0px', height: '101%', width: '43%', top: '-1px' }}>
-                <Match pState={'top'} team={m4[2]} />
-                <Match team={m4[3]} />
+                <Match pState={'top'} />
+                <Match />
               </div>
             </div>
             <div className='absolute' style={{ right: '0px', height: '100%', width: '27%' }}>
-              <Match pState={'top'} team={m2[0]} />
-              <Match team={m2[1]} />
+              <Match pState={'top'} />
+              <Match />
             </div>
           </aside>
           <aside className='gra-right relative'>
-            <Match team={data[Group][4]} />
+            <Match />
           </aside>
         </div>
       </div>

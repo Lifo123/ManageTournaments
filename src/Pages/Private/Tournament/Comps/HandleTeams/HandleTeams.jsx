@@ -37,17 +37,20 @@ function Group({ tgr }) {
         setTeams([...Teams, { team: 'TBD', id: tgr }]);
     }
     return (
-        <ul className='group-team grp-cont f-col br-6' tgr={tgr + 1}>
-            {
-                Teams && Teams.map((item, index) => (
-                    <Team key={index} data={item} id={index + 1} />
-                ))
-            }
-            {Teams.length <= 15 ? (
-                <li className='t-list add-btn d-flex f-center br-none w-100 pointer' onClick={HandleAddTeam}><AddIcon h={90} /></li>
-            ) : null
-            }
-        </ul>
+        <section className='f-col' tgr={`G${tgr + 1}`}>
+            <h4>Group {tgr + 1}</h4>
+            <ul className='group-team grp-cont f-col br-6 mt-1'>
+                {
+                    Teams && Teams.map((item, index) => (
+                        <Team key={index} data={item} id={index + 1} />
+                    ))
+                }
+                {Teams.length <= 15 ? (
+                    <li className='t-list add-btn d-flex f-center br-none w-100 pointer' onClick={HandleAddTeam}><AddIcon h={90} /></li>
+                ) : null
+                }
+            </ul>
+        </section>
     )
 }
 
@@ -56,9 +59,9 @@ function Team({ data, id }) {
     const TourContext = useContext(TourInfoContext)
 
     return (
-        <li className='t-list plaf f-row f-align-center'>
-            <input className='w-90 d-flex f-align-center h-100' edit={'ttn'} defaultValue={data.team} disabled={TourContext.Save ? false : true} placeholder='TBD'/>
-            <input className='t-id w-10 text-center h-100' edit={'ttgrp'} defaultValue={id} maxLength={6} disabled={TourContext.Save ? false : true} placeholder='Grp'/>
+        <li className='t-list plaf f-row f-align-center' edit={'ttn'}>
+            <input className='w-90 d-flex f-align-center h-100' defaultValue={data.team} disabled={TourContext.Save ? false : true} placeholder='TBD' />
+            <input className='t-id w-10 text-center h-100' defaultValue={id} maxLength={6} disabled={TourContext.Save ? false : true} placeholder='Grp' />
         </li>
     )
 }
