@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+
 import Loading from "./Components/Loading/Loading";
 
 // Lazy loaded components
@@ -26,7 +27,7 @@ const AppRoutes = ({ Auth }) => {
 
             <Route element={<SuspenseWrapper><PrivateRoutes Auth={Auth} /></SuspenseWrapper>}>
                 <Route path='/Home' element={<SuspenseWrapper><Home /></SuspenseWrapper>} />
-                <Route path="/Game" element={<SuspenseWrapper><Game /></SuspenseWrapper>} />
+                <Route path="/Game/:game" element={<SuspenseWrapper><Game /></SuspenseWrapper>} />
                 <Route path='/Tournament/View/:id' element={<SuspenseWrapper><Tournament /></SuspenseWrapper>} />
                 <Route path='/Profile/:user' element={<SuspenseWrapper><Profile /></SuspenseWrapper>} />
             </Route>

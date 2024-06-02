@@ -6,6 +6,7 @@ import CardGames from './Comps/CardGames';
 import News from '../../../Components/News/News';
 import Footer from '../../../Components/Footer/Footer';
 import InputSearch from '../../../Components/Input/InputSearch';
+import { SearchSort } from '../../../Functions/Sort';
 
 
 export default function Home() {
@@ -22,9 +23,7 @@ export default function Home() {
 
   //Functions
 
-  const filteredGames = Games.filter(Game =>
-    Game.game && Game.game.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredGames = SearchSort(Games, searchTerm);
 
   return (
     <>
@@ -44,7 +43,7 @@ export default function Home() {
               }
             </ul>
           </div>
-          <News />
+          <News w={30}/>
         </div>
       </main>
       <Footer />

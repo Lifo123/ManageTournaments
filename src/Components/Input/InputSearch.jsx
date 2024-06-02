@@ -19,7 +19,7 @@ export default function InputSearch({ text, i, funct }) {
         <span className='lr-in d-flex flex-column relative'>
             {i ? <span className="ski absolute pointer">{i}</span> : null}
             <input className="input" type='text' onFocus={HandleFocus} onBlur={HandleBlur} onChange={HandleSearch} />
-            <p className='in-p absolute no-select'>{text || 'Attribute "text={`PlaceHolder`}"'}</p>
+            <p className='in-p absolute no-select'>{text || 'Search'}</p>
         </span>
     )
 }

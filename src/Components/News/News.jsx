@@ -1,44 +1,15 @@
+import React from 'react'
 import './Styles/News.css'
+import NewRow from './NewRow'
 
-function News() {
+function News({ w }) {
     return (
-        <ul className='f-col g-20'>
-            <li className="new-card f-row g-20 ">
-                <span className='br-4 d-flex f-center pointer'></span>
-                <div className='f-col g-5 mt-10 pointer'>
-                    <h2 className='hm-font-h2'>New Title</h2>
-                    <p className='hm-font-p'>Little descripcion of New</p>
-                </div>
-            </li>
-            <li className="new-card f-row g-20 ">
-                <span className='br-4 d-flex f-center pointer'></span>
-                <div className='f-col g-5 mt-10 pointer'>
-                    <h2 className='hm-font-h2'>New Title</h2>
-                    <p className='hm-font-p'>Little descripcion of New</p>
-                </div>
-            </li>
-            <li className="new-card f-row g-20 ">
-                <span className='br-4 d-flex f-center pointer'></span>
-                <div className='f-col g-5 mt-10 pointer'>
-                    <h2 className='hm-font-h2'>New Title</h2>
-                    <p className='hm-font-p'>Little descripcion of New</p>
-                </div>
-            </li>
-            <li className="new-card f-row g-20 ">
-                <span className='br-4 d-flex f-center pointer'></span>
-                <div className='f-col g-5 mt-10 pointer'>
-                    <h2 className='hm-font-h2'>New Title</h2>
-                    <p className='hm-font-p'>Little descripcion of New</p>
-                </div>
-            </li>
-            <li className="new-card f-row g-20 ">
-                <span className='br-4 d-flex f-center pointer'></span>
-                <div className='f-col g-5 mt-10 pointer'>
-                    <h2 className='hm-font-h2'>New Title</h2>
-                    <p className='hm-font-p'>Little descripcion of New</p>
-                </div>
-            </li>
-
+        <ul className='nws-sec f-col p-0 mt-25' style={{ width: `${w}%` }}>
+            <NewRow />
+            <NewRow />
+            <NewRow />
+            <NewRow />
+            <NewRow />
         </ul>
     )
 }

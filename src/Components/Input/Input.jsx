@@ -1,4 +1,4 @@
-function Input({ t, text, n, f, i, atr, enter }) {
+export default function Input({ t, text, n, f, i, atr, enter }) {
 
     //Functions
     const HandleFocus = (e) => {
@@ -23,5 +23,3 @@ function Input({ t, text, n, f, i, atr, enter }) {
         </span>
     )
 }
-
-export default Input

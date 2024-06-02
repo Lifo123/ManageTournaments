@@ -37,11 +37,20 @@
     z-index: 10;
 }
 
-.t-list p {
+.t-list input {
+    border-radius: 8px;
+    border: none;
+    outline: none;
     padding: 0px 14px;
+    font-size: 15px;
+    font-family: sans-serif;
 }
-.t-list p > span{
-    font-family: sans-serif !;
+.t-id{
+    border-radius: 0 !important;
+    border-left: solid 1px var(--br-normal) !important; 
+    padding: 0px !important;
+    min-width: 50px;    
+
 }
 
 .t-list > span {
@@ -60,3 +69,5 @@
     background-color: var(--sk-in);
     stroke: var(--br-normal) !important;
 }
+
+

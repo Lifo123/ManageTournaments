@@ -1,9 +1,10 @@
-.t-save{
+.t-save {
     position: sticky;
     top: 20px;
     z-index: 100;
 }
-.v-tournament div h5{
+
+.v-tournament section h5 {
     font-size: 22px;
     font-family: Inter-Basic;
     padding: 8px 5px;
@@ -13,9 +14,10 @@
 }
 
 
-.tm-search li{
+.tm-search li {
     border-bottom: solid 1px var(--br-low);
     padding: 14px 0px;
     list-style: none;
     font-size: 15px;
 }
+

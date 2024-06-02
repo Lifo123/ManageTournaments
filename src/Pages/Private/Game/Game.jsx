@@ -1,6 +1,7 @@
 import './Styles/Game.css'
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { SearchSort } from '../../../Functions/Sort';
 
 import Header from '../../../Components/Header/Header';
 import News from '../../../Components/News/News';
@@ -11,9 +12,8 @@ import CardTournament from './Comp/CardTournament';
 
 export default function Game() {
     //URL
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const game = searchParams.get('g').replace(/-/g, ' ');
+    const ArrayPath = window.location.pathname.split('/');
+    const Game = ArrayPath[ArrayPath.length - 1].replace(/-/g, ' ')
 
     //States
     const [Tournaments, setTournaments] = useState([
@@ -26,10 +26,7 @@ export default function Game() {
     ]);
     const [searchTerm, setSearchTerm] = useState('');
 
-    //Functions
-    const filteredTournaments = Tournaments.filter(item =>
-        item.title && item.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredTournaments = SearchSort(Tournaments, searchTerm);
 
     return (
         <>
@@ -37,7 +34,7 @@ export default function Game() {
             <div className='f-row w-100 f-justify-center'>
                 <Retroceso text={'Back'} />
                 <main className='game-main w-80 f-col mt-40'>
-                    <h2 className='a-fnt-3 text-left ms-5'>{game}</h2>
+                    <h2 className='a-fnt-3 text-left ms-5'>{Game}</h2>
                     <div className='f-row g-80 mt-40 ms-5'>
                         <div className='f-col w-70 g-25'>
                             <span className='d-flex gm-src pb-3'>

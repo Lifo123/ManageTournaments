@@ -37,7 +37,7 @@ function Group({ tgr }) {
         setTeams([...Teams, { team: 'TBD', id: tgr }]);
     }
     return (
-        <ul className='group-team f-col br-6' tgr={tgr + 1}>
+        <ul className='group-team grp-cont f-col br-6' tgr={tgr + 1}>
             {
                 Teams && Teams.map((item, index) => (
                     <Team key={index} data={item} id={index + 1} />
@@ -55,14 +55,10 @@ function Team({ data, id }) {
     //Local Context
     const TourContext = useContext(TourInfoContext)
 
-    const HandleAddTeam = () => {
-
-    }
-
     return (
-        <li className='t-list f-row f-align-center'>
-            <p className='w-90 d-flex f-align-center h-100' edit={'ttn'} contentEditable={TourContext.Save}>{data.team}</p>
-            <span className='w-10 d-flex f-center h-100' edit={'ttgrp'} contentEditable={TourContext.Save}>{id}</span>
+        <li className='t-list plaf f-row f-align-center'>
+            <input className='w-90 d-flex f-align-center h-100' edit={'ttn'} defaultValue={data.team} disabled={TourContext.Save ? false : true} placeholder='TBD'/>
+            <input className='t-id w-10 text-center h-100' edit={'ttgrp'} defaultValue={id} maxLength={6} disabled={TourContext.Save ? false : true} placeholder='Grp'/>
         </li>
     )
 }
