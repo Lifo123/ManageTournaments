@@ -9,7 +9,7 @@ export default function Loading({ t }) {
         if (t === 1) {
             setData({ s: 0.7, mt: 70, w: 10 });
         } else if (t === 2) {
-            setData({ s: 0.5, mt: 50, w: 10 });
+            setData({ s: 0.5, mt: 40, w: 10 });
         }
     }, [])
 

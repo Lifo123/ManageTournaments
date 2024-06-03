@@ -12,6 +12,7 @@ const Home = lazy(() => import('./Pages/Private/Home/Home'));
 const Profile = lazy(() => import('./Pages/Private/Profile/Profile'));
 const Game = lazy(() => import('./Pages/Private/Game/Game'))
 const Tournament = lazy(() => import("./Pages/Private/Tournament/Tournament"));
+const Blogs = lazy(() => import('./Pages/Blogs/Blogs'))
 
 const SuspenseWrapper = ({ children }) => (
     <Suspense fallback={<Loading t={1} />}>{children}</Suspense>
@@ -24,6 +25,7 @@ const AppRoutes = ({ Auth }) => {
 
             <Route path="/Login" element={<SuspenseWrapper><LogReg m={'Log'} /></SuspenseWrapper>} />
             <Route path="/Register" element={<SuspenseWrapper><LogReg m={'Reg'} /></SuspenseWrapper>} />
+            <Route path="/Blog" element={<SuspenseWrapper><Blogs /></SuspenseWrapper>} />
 
             <Route element={<SuspenseWrapper><PrivateRoutes Auth={Auth} /></SuspenseWrapper>}>
                 <Route path='/Home' element={<SuspenseWrapper><Home /></SuspenseWrapper>} />

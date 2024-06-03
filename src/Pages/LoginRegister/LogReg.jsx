@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from 'react'
+import { lazy, useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext, UserContext } from '../../App'
 
 import './Styles/LogReg.css'
-import Input from '../../Components/Input/Input';
+const Input = lazy(() => import('../../Components/Input/Input'))
 
 function LogReg({ m }) {
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ function LogReg({ m }) {
     //Effects
     useEffect(() => {
         if (Auth.Auth) {
-            navigate('//')
+            navigate('/')
         }
     }, []);
 
