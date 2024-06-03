@@ -62,7 +62,7 @@ export default function Blogs() {
             <Suspense fallback={<Loading t={2} />}><Header /></Suspense>
             <main className='sec-article d-grid g-20 w-80 m-auto g-10 mt-40'>
                 <section className='f-col br-10 g-15'>
-                    <h1 id='Post'>Blog Post</h1>
+                    <h1 id='Post'>Probando el Index</h1>
                     <h2 id='Title' ref={(el) => (headingsRef.current[1] = el)}>Title</h2>
                     <p>Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world’s most popular markup languages.</p>
                     <p>Using Markdown is <code> different</code> than using a WYSIWYG editor. In an application like Microsoft Word, you click buttons to format words and phrases, and the changes are visible immediately. Markdown isn’t like that. When you create a Markdown-formatted file, you add Markdown syntax to the text to indicate which words and phrases should look different.</p>
