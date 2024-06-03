@@ -5,12 +5,11 @@ import Match from './Match'
 function GrafficMatch({ scale, data, left }) {
   //States
   const [GroupMatch, setGroupMatch] = useState('');
-  console.log(data);
 
   return (
     <div className='f-col g-20'>
       <div className='f-row g-20'>
-        {data.map((item, index) => (
+        {data && data.map((item, index) => (
           <span key={index} className="grfc-btn pointer">Group {index + 1}</span>
         ))}
       </div>

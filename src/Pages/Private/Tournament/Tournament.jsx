@@ -14,7 +14,7 @@ export default function Tournament() {
         TourInfo: '',
         TourPool: '',
     });
-    const [TourTeams, setTourTeams] = useState({});
+    const [TourTeams, setTourTeams] = useState([{team: '', id: ''}]);
     const [Save, setSave] = useState(false);
 
     return (

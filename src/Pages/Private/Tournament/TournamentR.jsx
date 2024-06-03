@@ -30,7 +30,7 @@ export default function TournamentR() {
         TContext.setSave(true);
         e.target.parentElement.querySelectorAll('[edit]').forEach(element => {
             element.contentEditable = !TContext.Save;
-            LifoFunct.showAlert('Estas editando la informacion', 'error', 2000);
+            LifoFunct.showAlert('Estas editando la informacion', 'error');
         });
     }
     const HandleSave = () => {
@@ -52,6 +52,7 @@ export default function TournamentR() {
             }
         });
         TContext.setTourTeams(teamData);
+        console.log(teamData);
     };
 
 
@@ -104,7 +105,7 @@ export default function TournamentR() {
                             </section>
                             <section>
                                 <h5>Matchs</h5>
-                                {TContext.TourTeams.length && <GrafficMatch left={-100} scale={0.9} data={TContext.TourTeams} />}
+                                {TContext.TourTeams.length > 0 ? <GrafficMatch left={-100} scale={0.9} data={TContext.TourTeams}/> : null}
 
                             </section>
                         </main>

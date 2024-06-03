@@ -7,6 +7,9 @@
     bottom: 20px;
     right: 30px;
     font-size: 14px;
+    opacity: 0;
+    transition: all 0.2s;
+    pointer-events: none;
 }
 .alert label > span{
     border: none;
@@ -26,4 +29,9 @@
 .alert span svg{
     height: 80%;
     width: 80%;
+}
+
+.alert-active{
+    opacity: 1;
+    pointer-events: visible;
 }
