@@ -1,1 +1,0 @@
-import{j as t,N as r,O as o}from"./index-DCb_Y4wD.js";/* empty css                     */function i({Auth:e}){return e?t.jsx(o,{}):(console.log("U dont have permissions"),t.jsx(r,{to:"/error",replace:!0}))}export{i as default};
