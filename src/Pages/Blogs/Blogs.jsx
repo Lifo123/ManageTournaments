@@ -41,9 +41,11 @@ export default function Blogs() {
                 if (entry.isIntersecting) {
                     setActiveHeading(`#${id.replace(/ /g, '-')}`);
                     console.log(entry);
+
+                    console.log('hola');
                 }
             });
-        }, { rootMargin: '10% 0% -70% 0%', threshold: 1 });
+        }, { rootMargin: '5% 0% -70% 0%', threshold: 1 });
 
         headingsRef.current.forEach((heading) => {
             observer.observe(heading);
