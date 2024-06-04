@@ -1,5 +1,6 @@
 import { lazy, useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet} from 'react-helmet-async';
 import { AuthContext, UserContext } from '../../App'
 
 import './Styles/LogReg.css'
@@ -81,7 +82,11 @@ function LogReg({ m }) {
 
     return (
         <main className='main-LogReg fixed h-100 w-100 relative'>
-            <Link className='mlr-logo ski absolute' to={'//'}></Link>
+            <Helmet>
+                <title>{LogReg === 'Log' ? 'Login' : 'Register'}</title>
+                <meta name="description" content={LogReg === 'Log' ? 'Iniciaer Session' : 'Registrarte'} />
+            </Helmet>
+            <Link className='mlr-logo ski absolute' to={'/'}></Link>
             <div className='mlr-form absolute'>
                 <form className='f-col relative g-25'>
                     <header className='f-col g-5'>

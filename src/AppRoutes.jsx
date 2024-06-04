@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 
 import Loading from "./Components/Loading/Loading";
 
@@ -20,21 +21,23 @@ const SuspenseWrapper = ({ children }) => (
 
 const AppRoutes = ({ Auth }) => {
     return (
-        <Routes>
-            <Route path='/' element={<SuspenseWrapper><LandingPage /></SuspenseWrapper>} />
+        <HelmetProvider>
+            <Routes>
+                |<Route path='/' element={<SuspenseWrapper><LandingPage /></SuspenseWrapper>} />
 
-            <Route path="/Login" element={<SuspenseWrapper><LogReg m={'Log'} /></SuspenseWrapper>} />
-            <Route path="/Register" element={<SuspenseWrapper><LogReg m={'Reg'} /></SuspenseWrapper>} />
-            <Route path="/Blog" element={<SuspenseWrapper><Blogs /></SuspenseWrapper>} />
+                <Route path="/Login" element={<SuspenseWrapper><LogReg m={'Log'} /></SuspenseWrapper>} />
+                <Route path="/Register" element={<SuspenseWrapper><LogReg m={'Reg'} /></SuspenseWrapper>} />
+                <Route path="/Blog" element={<SuspenseWrapper><Blogs /></SuspenseWrapper>} />
 
-            <Route element={<SuspenseWrapper><PrivateRoutes Auth={Auth} /></SuspenseWrapper>}>
-                <Route path='/Home' element={<SuspenseWrapper><Home /></SuspenseWrapper>} />
-                <Route path="/Game/:game" element={<SuspenseWrapper><Game /></SuspenseWrapper>} />
-                <Route path='/Tournament/View/:id' element={<SuspenseWrapper><Tournament /></SuspenseWrapper>} />
-                <Route path='/Profile/:user' element={<SuspenseWrapper><Profile /></SuspenseWrapper>} />
-            </Route>
-            <Route path="*" element={<SuspenseWrapper><PageNotFound /></SuspenseWrapper>} />
-        </Routes>
+                <Route element={<SuspenseWrapper><PrivateRoutes Auth={Auth} /></SuspenseWrapper>}>
+                    <Route path='/Home' element={<SuspenseWrapper><Home /></SuspenseWrapper>} />
+                    <Route path="/Game/:game" element={<SuspenseWrapper><Game /></SuspenseWrapper>} />
+                    <Route path='/Tournament/View/:id' element={<SuspenseWrapper><Tournament /></SuspenseWrapper>} />
+                    <Route path='/Profile/:user' element={<SuspenseWrapper><Profile /></SuspenseWrapper>} />
+                </Route>
+                <Route path="*" element={<SuspenseWrapper><PageNotFound /></SuspenseWrapper>} />
+            </Routes>
+        </HelmetProvider>
     )
 }
 

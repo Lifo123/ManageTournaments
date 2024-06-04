@@ -10,7 +10,7 @@ function Footer() {
                     <Link  className='ski'></Link>
                     <h5 className='f-fnt-1' style={{fontSize: '30px'}}>HLZ</h5>
                 </label>
-                <p className='mt-25 f-fnt-2'>Copyright © 2020 Landify UI Kit.</p>
+                <p className='mt-25 f-fnt-2'>Copyright © {new Date().getFullYear()} Landify UI Kit.</p>
                 <p className='mt-5 f-fnt-2'>All rights reserved</p>
                 <ul className='mt-25 f-row g-10'>
                     <Link  className='ski'>ig</Link>

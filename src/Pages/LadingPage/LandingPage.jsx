@@ -1,6 +1,7 @@
 import './Styles/LadingPage.css'
 
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
@@ -9,6 +10,9 @@ function LandingPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Manage Tournaments</title>
+      </Helmet>
       <Header />
       <main className='lan-main d-flex sticky f-justify-center g-120 w-75'>
         <div className='f-col g-20 lan-left'>
