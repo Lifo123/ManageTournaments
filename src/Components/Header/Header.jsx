@@ -16,7 +16,7 @@ function Header() {
         <header className='header f-row w-100'>
             <div className='f-row logo-div f-align-center ml-40 g-10'>
                 <span className='ski pointer' onClick={() => navigate('//')}></span>
-                <h4 className='pointer' onClick={() => navigate('//')}>Manage Tournaments</h4>
+                <h4 className='pointer' onClick={() => navigate('/')}>Manage Tournaments</h4>
             </div>
             <div className='f-row f-align-center g-20'>
                 <ul className='f-row h-list'>

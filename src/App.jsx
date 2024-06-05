@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
 
 //Import JS
@@ -48,10 +48,10 @@ function App() {
     <AuthContext.Provider value={{ Auth, setAuth }}>
       <UserContext.Provider value={{ UserData, setUserData }}>
         <FunctContext.Provider value={{ LifoFunct, showAlert }}>
-          <BrowserRouter basename="ManageTournaments/">
+          <HashRouter>
             <AppRoutes Auth={Auth} />
-          </BrowserRouter>
-          {alert ? <Alert data={alert} funct={setAlert}/> : null}
+          </HashRouter>
+          {alert ? <Alert data={alert} funct={setAlert} /> : null}
         </FunctContext.Provider>
       </UserContext.Provider>
     </AuthContext.Provider>
